@@ -25,17 +25,35 @@ textarea {
   background-color: rgba(57, 57, 57, 0.781);
 }
 
-.card-footer > button {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  border: 1px solid rgba(0, 0, 0, 0);
-  background-color: blueviolet;
+.card-footer {
+  border: 1px solid rgb(101, 101, 101);
+  background-color: rgba(57, 57, 57, 0.781);
 }
 
-.card-footer > button:hover {
-  /* border: 1px solid black; */
-  background-color: rgb(211, 183, 238);
+button#generate {
   color: rgb(74, 74, 74);
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 1px solid rgb(74, 74, 74);
+  background-color: rgb(211, 183, 238);
+  padding-top: 40px;
+  padding-bottom: 40px;
+  margin: 0;
+  box-shadow: 0 10px rgb(74, 74, 74);
+  transition: margin;
+}
+
+button#generate:hover {
+  /* border: 1px solid black; */
+  background-color: rgb(187, 140, 231);
+  color: white;
+  /* color: rgb(74, 74, 74); */
+}
+
+button#generate:active {
+  box-shadow: 0 3px rgb(74, 74, 74);
+  margin-top: 7px;
+  margin-bottom: -7px;
 }
 
 #pw-length {
