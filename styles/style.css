@@ -1,0 +1,114 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+.wrapper {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
+    Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: "Playpen Sans", cursive;
+  background-color: #f9fbfd;
+}
+
+.wrapper {
+  padding-top: 1.5rem;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+header h1 {
+  text-align: center;
+  padding: 20px;
+  color: hsl(206, 17%, 28%);
+  background-color: rgb(250, 250, 250);
+  box-shadow: 0 5px 10px rgba(3, 3, 3, 0.224);
+  border: 1px var(--bs-border-color-translucent);
+  font-family: "Glass Antiqua", cursive;
+  font-size: 3rem;
+}
+
+.card {
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 5px;
+  border-width: 1px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px 0px;
+  color: hsl(206, 17%, 28%);
+  font-size: 18px;
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 40px 40px 50px 40px;
+}
+
+.card-header {
+  text-align: center;
+}
+
+.card-body {
+  min-height: 100px;
+}
+
+.card-footer {
+  text-align: center;
+}
+
+.btn {
+  border: none;
+  background-color: hsl(360, 91%, 36%);
+  border-radius: 25px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px 0px;
+  color: hsl(0, 0%, 100%);
+  display: inline-block;
+  font-size: 1rem;
+  line-height: 22px;
+  margin: 16px 0px 0px 0px;
+  padding: 10px 15px;
+  text-align: center;
+  cursor: pointer;
+  font-family: "Glass Antiqua", cursive;
+  font-size: 2rem;
+}
+
+button[disabled] {
+  cursor: default;
+  background: #c0c7cf;
+}
+
+#password {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  display: block;
+  width: 100%;
+  padding: 15px;
+  font-size: 1rem;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: 2px dashed #c0c7cf;
+  border-radius: 6px;
+  resize: none;
+  overflow: hidden;
+  color: black;
+}
+
+@media (min-width: 690px) {
+  .btn {
+    margin: 16px 16px 16px 16px;
+    padding: 14px 34px;
+  }
+
+  #password {
+    font-size: 1.2rem;
+  }
+}
