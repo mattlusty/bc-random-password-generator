@@ -12,3 +12,7 @@ h5,
 h6 {
   margin: 0;
 }
+
+.input-group > *:last-child {
+  flex-grow: 1;
+}
