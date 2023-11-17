@@ -58,3 +58,7 @@ button#generate:active {
 #pw-length {
   min-width: 5ch;
 }
+
+.input-group-text {
+  color: rgb(130, 130, 130);
+}

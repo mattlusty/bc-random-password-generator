@@ -14,6 +14,9 @@ body,
 
 body {
   font-family: sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
+    Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: "Playpen Sans", cursive;
   background-color: #f9fbfd;
 }
 
@@ -23,13 +26,15 @@ body {
   padding-right: 20px;
 }
 
-header {
+header h1 {
   text-align: center;
   padding: 20px;
   color: hsl(206, 17%, 28%);
   background-color: rgb(250, 250, 250);
   box-shadow: 0 5px 10px rgba(3, 3, 3, 0.224);
   border: 1px var(--bs-border-color-translucent);
+  font-family: "Glass Antiqua", cursive;
+  font-size: 3rem;
 }
 
 .card {
@@ -69,6 +74,8 @@ header {
   padding: 10px 15px;
   text-align: center;
   cursor: pointer;
+  font-family: "Glass Antiqua", cursive;
+  font-size: 3rem;
 }
 
 button[disabled] {
@@ -92,11 +99,11 @@ button[disabled] {
   border-radius: 6px;
   resize: none;
   overflow: hidden;
+  color: #9a9a9a;
 }
 
 @media (min-width: 690px) {
   .btn {
-    font-size: 22px;
     margin: 16px 16px 16px 16px;
     padding: 14px 34px;
   }
