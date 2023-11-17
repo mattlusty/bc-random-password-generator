@@ -18,7 +18,7 @@ body {
 }
 
 .wrapper {
-  padding-top: 30px;
+  padding-top: 1.5rem;
   padding-left: 20px;
   padding-right: 20px;
 }
@@ -26,8 +26,10 @@ body {
 header {
   text-align: center;
   padding: 20px;
-  padding-top: 0px;
   color: hsl(206, 17%, 28%);
+  background-color: rgb(250, 250, 250);
+  box-shadow: 0 5px 10px rgba(3, 3, 3, 0.224);
+  border: 1px var(--bs-border-color-translucent);
 }
 
 .card {
@@ -39,7 +41,7 @@ header {
   font-size: 18px;
   margin: 0 auto;
   max-width: 800px;
-  padding: 30px 40px;
+  padding: 40px 40px 50px 40px;
 }
 
 .card-header {

@@ -22,7 +22,9 @@ textarea {
 }
 
 .card-header {
-  background-color: rgba(57, 57, 57, 0.781);
+  background-color: rgba(255, 255, 255, 0.781);
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px 0px;
+  border: 1px solid rgba(0, 0, 0, 0.175);
 }
 
 .card-footer {
@@ -44,10 +46,7 @@ button#generate {
 }
 
 button#generate:hover {
-  /* border: 1px solid black; */
-  background-color: rgb(187, 140, 231);
-  color: white;
-  /* color: rgb(74, 74, 74); */
+  background-color: rgb(192, 147, 234);
 }
 
 button#generate:active {
