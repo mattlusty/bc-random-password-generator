@@ -21,6 +21,10 @@ textarea {
   height: fit-content;
 }
 
+.card-header {
+  background-color: rgba(57, 57, 57, 0.781);
+}
+
 .card-footer > button {
   margin-top: 20px;
   margin-bottom: 20px;
