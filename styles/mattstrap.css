@@ -16,3 +16,24 @@ h6 {
 .input-group > *:last-child {
   flex-grow: 1;
 }
+
+textarea {
+  height: fit-content;
+}
+
+.card-footer > button {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(0, 0, 0, 0);
+  background-color: blueviolet;
+}
+
+.card-footer > button:hover {
+  /* border: 1px solid black; */
+  background-color: rgb(211, 183, 238);
+  color: rgb(74, 74, 74);
+}
+
+#pw-length {
+  min-width: 5ch;
+}

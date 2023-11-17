@@ -21,8 +21,8 @@
       <div class="card">
         <div class="card-header">
           <form>
-            <div class="row">
-              <div class="col flex-nowrap input-group mb-3">
+            <div class="row gy-3">
+              <div class="col flex-nowrap input-group">
                 <div class="input-group-text">
                   <input
                     class="form-check-input mt-0"
@@ -32,10 +32,15 @@
                   />
                 </div>
                 <span class="input-group-text">Length</span>
-                <input type="text" class="form-control" aria-label="Text input with checkbox" />
+                <input
+                  id="pw-length"
+                  type="text"
+                  class="form-control"
+                  aria-label="Text input with checkbox"
+                />
               </div>
 
-              <div class="col flex-nowrap input-group mb-3">
+              <div class="col flex-nowrap input-group">
                 <div class="input-group-text">
                   <input
                     class="form-check-input mt-0"
@@ -47,7 +52,7 @@
                 <span class="input-group-text">Lowercase</span>
               </div>
 
-              <div class="col flex-nowrap input-group mb-3">
+              <div class="col flex-nowrap input-group">
                 <div class="input-group-text">
                   <input
                     class="form-check-input mt-0"
@@ -59,7 +64,7 @@
                 <span class="input-group-text">Uppercase</span>
               </div>
 
-              <div class="col flex-nowrap input-group mb-3">
+              <div class="col flex-nowrap input-group">
                 <div class="input-group-text">
                   <input
                     class="form-check-input mt-0"
@@ -71,7 +76,7 @@
                 <span class="input-group-text">Numbers</span>
               </div>
 
-              <div class="col flex-nowrap input-group mb-3">
+              <div class="col flex-nowrap input-group">
                 <div class="input-group-text">
                   <input
                     class="form-check-input mt-0"
@@ -86,12 +91,14 @@
           </form>
         </div>
         <div class="card-body">
-          <textarea
+          <div
             readonly
             id="password"
             placeholder="Your Secure Password"
             aria-label="Generated Password"
-          ></textarea>
+          >
+            Your Secure Password
+          </div>
         </div>
         <div class="card-footer">
           <button id="generate" class="btn">Generate Password</button>
