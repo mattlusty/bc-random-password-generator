@@ -75,7 +75,7 @@ header h1 {
   text-align: center;
   cursor: pointer;
   font-family: "Glass Antiqua", cursive;
-  font-size: 3rem;
+  font-size: 2rem;
 }
 
 button[disabled] {
@@ -99,7 +99,7 @@ button[disabled] {
   border-radius: 6px;
   resize: none;
   overflow: hidden;
-  color: #9a9a9a;
+  color: black;
 }
 
 @media (min-width: 690px) {
