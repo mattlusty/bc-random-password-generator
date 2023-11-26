@@ -29,6 +29,15 @@ function setup() {
 
   // Set a single event listener - on top level form - (for all check option elements)
   document.querySelector("form").addEventListener("input", handleCheckInput);
+
+  // Get reference to password Text area element
+  let passwordDisplay = document.querySelector("#password");
+
+  // Get references to Generate Button element
+  var generateBtn = document.querySelector("#generate");
+
+  // Add event listener to Generate Button
+  generateBtn.addEventListener("click", () => displayPassword(passwordDisplay));
 }
 
 // Handle - Update Password Length Input
@@ -124,6 +133,10 @@ function generatePassword2() {
   return pw;
 }
 
+function displayPassword(passwordDisplay) {
+  passwordDisplay.innerHTML = generatePassword2();
+}
+
 // Initiate Code
 // =========================================================================
 
@@ -173,5 +186,6 @@ var generateBtn = document.querySelector("#generate");
 //   passwordText.value = password;
 // }
 
+// ADDED
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+// generateBtn.addEventListener("click", writePassword);
