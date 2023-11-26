@@ -1,163 +1,111 @@
-// OBJECTS
+// GLOBAL VARIABLES
 // =========================================================================
 
 // Password Length (Option)
 let passwordLength = { id: "length", value: 10, element: null };
 
 // Checkbox Options
-const options = {
-  lowercase: { id: "lowercase", value: false, element: null },
-  uppercase: { id: "uppercase", value: false, element: null },
-  numbers: { id: "numbers", value: false, element: null },
-  special: { id: "special", value: false, element: null },
-};
+const options = ["lowercase", "uppercase", "numbers", "special"];
 
-// Functions
+// SETUP CODE
 // =========================================================================
 
-function setup() {
-  // Initialise PW length object - with element
-  initElement(passwordLength);
+// (1) PW Length
 
-  // Set event listener - on PW length element
-  passwordLength.element.addEventListener("input", handleLengthInput);
+// Not actually needed
+// passwordLength.element = document.querySelector("#" + passwordLength.id);
+// passwordLength.element.addEventListener("input", handleLengthInput);
 
-  // Initialise checkbox option objects - with elements
-  Object.values(options).forEach((option) => {
-    initElement(option);
-  });
+// (2) Checkbox Options
 
-  // Set a single event listener - on top level form - (for all checkbox option elements)
-  document.querySelector("form").addEventListener("input", handleCheckInput);
+// Maybe actually needed
+// options.forEach((option) => {
+//   option.element = document.querySelector("#" + option.id);
+// });
+// Set single event listener - to catch all checkbox elements input
+// document.querySelector("form").addEventListener("input", handleCheckInput);
 
-  // Get reference to password display area element
-  let passwordDisplay = document.querySelector("#password");
+// (3) Generate-Button element
 
-  // Get reference to Generate Button element
-  var generateBtn = document.querySelector("#generate");
+// Add event listener to Generate Button
+var generateButton = document.querySelector("#generate");
+generateButton.addEventListener("click", displayPassword);
 
-  // Add event listener to Generate Button
-  generateBtn.addEventListener("click", () => displayPassword(passwordDisplay));
-}
+// Element to display password - used by writePassord()
+let passwordDisplay = document.querySelector("#password");
 
-// Handle - Update Password Length Input
-function handleLengthInput(e) {
-  // Event is exclusively for pw length element - so prevent going up to other event listener
-  e.stopPropagation();
+// EVENT HANDLERS
+// =========================================================================
 
-  // Update object value
-  passwordLength.value = passwordLength.element.value;
-}
+// Non actually needed
 
-// Handle - Update Checkbox Inputs
-function handleCheckInput(e) {
-  let option = options[e.target.id];
-  let element = option.element;
-  option.value = element.checked;
-}
+// FUNCTIONS
+// =========================================================================
 
-// Get a random element from an array
-function getRandom(array) {
-  let randomIndex = randomNumber(0, array.length - 1);
-  return array[randomIndex];
-}
-
-// SIMPLE
-// Generate password with user options
+// Password Generator - Simple VERSION
 function generatePasswordSimple() {
-  let length = options.length.value;
-  if (!length) {
-    // pw length is option is EMPTY
-    return;
-  }
+  let pwLength = options.length.value;
+  if (!pwLength) return "Password Length not set!";
   let pw = "";
-  for (let i = 0; i < length; i++) {
+  for (let i = 0; i < pwLength; i++) {
     let optionsArray = Object.values(options);
     let option = optionsArray[randomNumber(1, 4)];
     let char = getRandom(window[option.id]);
-    if (!option.maxed) {
-      let char = getRandom(window[option.id]);
-      pw += char;
-    }
+    pw += char;
   }
   return pw;
 }
 
-// COMPLEX
-// Generate password with user options
-function generatePassword2() {
-  let pwLength = passwordLength.value;
-
-  // Return if no password length!
+// Password Generator - Options Guaranteed VERSION
+function generatePassword() {
+  let pwLength = document.querySelector("#length").value;
   if (!pwLength) return "Password Length not set!";
 
-  // Initialise array with included options
   let includeOptions = [];
   let i = 0;
-
-  Object.values(options).forEach((option) => {
-    if (option.value) {
-      includeOptions[i] = { id: option.id, count: 0 };
-      i++;
-      // last iteration leaves i = array length
-    }
+  options.forEach((option) => {
+    let checked = document.querySelector("#" + option).checked;
+    if (checked) includeOptions[i++] = { id: option, count: 0 };
   });
-
-  // Return if no Options selected!
   if (includeOptions.length == 0) return "No Options Selected!";
 
-  let charsPerType = includeOptions.length ? Math.ceil(pwLength / includeOptions.length) : 0;
-
-  // console.log("includeOptions.length", includeOptions.length);
-  console.log("charsPerType:", charsPerType);
-
+  let charsPerType = Math.ceil(pwLength / includeOptions.length);
   let pw = "";
-  let test = "";
-
   for (let i = 0; i < pwLength; i++) {
-    console.log("i: ", i);
-    let randomIndex = randomNumber(0, includeOptions.length - 1);
+    let randomIndex = getRandomIndex(includeOptions);
     let includeOption = includeOptions[randomIndex];
-    includeOption.count++;
-    console.log("includeOption.id: ", includeOption.id);
-    console.log("includeOption.count: ", includeOption.count);
-    let char = getRandom(window[includeOption.id]);
-    pw += char;
-    // Remove char type option over charsPerType
-    if (includeOption.count == charsPerType) {
-      // remove element at the randomIndex
-      let removed = includeOptions.splice(randomIndex, 1);
-      console.log("Removed: ", removed);
-    }
+    let charTypeArray = window[includeOption.id];
+    pw += getItemAtRandom(charTypeArray);
+    if (++includeOption.count == charsPerType) removeItem(includeOptions, randomIndex);
   }
   return pw;
 }
-
-function displayPassword(passwordDisplay) {
-  passwordDisplay.innerHTML = generatePassword2();
-}
-
-// Initiate Code
-// =========================================================================
-
-setup();
 
 // Helper Functions
 // =========================================================================
 
-function initElement(obj) {
-  obj.element = document.querySelector("#" + obj.id);
+function displayPassword() {
+  passwordDisplay.innerHTML = generatePassword();
 }
 
 function removeAtIndex(array, index) {
   array.splice(index, 1);
 }
 
-// Utility Fuctions
-// =========================================================================
+function getItemAtRandom(array) {
+  return array[getRandomIndex(array)];
+}
 
-function randomNumber(min, max) {
+function getRandomIndex(array) {
+  return getRandomNumber(0, array.length - 1);
+}
+
+function getRandomNumber(min, max) {
   return Math.floor(Math.random() * (max + 1 - min) + min);
+}
+
+function removeItem(array, index) {
+  return array.splice(index, 1);
 }
 
 // Original Starter Code
