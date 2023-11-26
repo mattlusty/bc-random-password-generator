@@ -10,23 +10,6 @@ const options = ["lowercase", "uppercase", "numbers", "special"];
 // SETUP CODE
 // =========================================================================
 
-// (1) PW Length
-
-// Not actually needed
-// passwordLength.element = document.querySelector("#" + passwordLength.id);
-// passwordLength.element.addEventListener("input", handleLengthInput);
-
-// (2) Checkbox Options
-
-// Maybe actually needed
-// options.forEach((option) => {
-//   option.element = document.querySelector("#" + option.id);
-// });
-// Set single event listener - to catch all checkbox elements input
-// document.querySelector("form").addEventListener("input", handleCheckInput);
-
-// (3) Generate-Button element
-
 // Add event listener to Generate Button
 var generateButton = document.querySelector("#generate");
 generateButton.addEventListener("click", displayPassword);
@@ -34,29 +17,9 @@ generateButton.addEventListener("click", displayPassword);
 // Element to display password - used by writePassord()
 let passwordDisplay = document.querySelector("#password");
 
-// EVENT HANDLERS
+// Password Generator
 // =========================================================================
 
-// Non actually needed
-
-// FUNCTIONS
-// =========================================================================
-
-// Password Generator - Simple VERSION
-function generatePasswordSimple() {
-  let pwLength = options.length.value;
-  if (!pwLength) return "Password Length not set!";
-  let pw = "";
-  for (let i = 0; i < pwLength; i++) {
-    let optionsArray = Object.values(options);
-    let option = optionsArray[randomNumber(1, 4)];
-    let char = getRandom(window[option.id]);
-    pw += char;
-  }
-  return pw;
-}
-
-// Password Generator - Options Guaranteed VERSION
 function generatePassword() {
   let pwLength = document.querySelector("#length").value;
   if (!pwLength) return "Password Length not set!";
