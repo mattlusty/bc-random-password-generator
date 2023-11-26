@@ -1,4 +1,4 @@
-// Options
+// OBJECTS
 // =========================================================================
 
 // Password Length (Option)
@@ -22,18 +22,18 @@ function setup() {
   // Set event listener - on PW length element
   passwordLength.element.addEventListener("input", handleLengthInput);
 
-  // Initialise other option objects - with elements
+  // Initialise checkbox option objects - with elements
   Object.values(options).forEach((option) => {
     initElement(option);
   });
 
-  // Set a single event listener - on top level form - (for all check option elements)
+  // Set a single event listener - on top level form - (for all checkbox option elements)
   document.querySelector("form").addEventListener("input", handleCheckInput);
 
-  // Get reference to password Text area element
+  // Get reference to password display area element
   let passwordDisplay = document.querySelector("#password");
 
-  // Get references to Generate Button element
+  // Get reference to Generate Button element
   var generateBtn = document.querySelector("#generate");
 
   // Add event listener to Generate Button
