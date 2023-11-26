@@ -15,7 +15,6 @@ function setup() {
   for (const key in options) {
     const option = options[key];
     option.element = document.querySelector("#" + option.id);
-    console.log(option);
   }
 
   // Set event listener on top level form
@@ -23,8 +22,12 @@ function setup() {
   form.addEventListener("input", handleInput);
 }
 
-function handleInput() {
-  console.log("handleInput");
+function handleInput(e) {
+  let target = e.target;
+  let id = target.id;
+  let option = options[id];
+  let element = option.element;
+  option.value = element.type == "text" ? element.value : element.checked;
 }
 
 setup();
