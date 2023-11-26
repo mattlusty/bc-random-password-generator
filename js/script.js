@@ -10,6 +10,25 @@ const options = {
   special: { id: "special", value: false, maxed: false, element: null },
 };
 
+function setup() {
+  // Get elements
+  for (const key in options) {
+    const option = options[key];
+    option.element = document.querySelector("#" + option.id);
+    console.log(option);
+  }
+
+  // Set event listener on top level form
+  let form = document.querySelector("form");
+  form.addEventListener("input", handleInput);
+}
+
+function handleInput() {
+  console.log("handleInput");
+}
+
+setup();
+
 // Original Starter Code
 // =========================================================================
 
