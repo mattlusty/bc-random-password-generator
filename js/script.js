@@ -22,12 +22,27 @@ function setup() {
   form.addEventListener("input", handleInput);
 }
 
+// Handle - Update Input
 function handleInput(e) {
   let target = e.target;
   let id = target.id;
   let option = options[id];
   let element = option.element;
   option.value = element.type == "text" ? element.value : element.checked;
+}
+
+// Function for getting a random element from an array
+function getRandom(array) {
+  let length = array.length;
+  let randomIndex = randomNumber(0, length - 1);
+  return array[randomIndex];
+}
+
+// Utility Fuctions
+// =========================================================================
+
+function randomNumber(min, max) {
+  return Math.floor(Math.random() * (max + 1 - min) + min);
 }
 
 setup();
@@ -38,8 +53,9 @@ setup();
 // Function to prompt user for password options
 function getPasswordOptions() {}
 
-// Function for getting a random element from an array
-function getRandom(arr) {}
+// IMPLEMENTED
+// // Function for getting a random element from an array
+// function getRandom(arr) {}
 
 // Function to generate password with user input
 function generatePassword() {}
