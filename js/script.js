@@ -6,10 +6,10 @@ let passwordLength = { id: "length", value: 10, element: null };
 
 // Checkbox Options
 const options = {
-  lowercase: { id: "lowercase", value: false, used: 0, maxed: false, element: null },
-  uppercase: { id: "uppercase", value: false, used: 0, maxed: false, element: null },
-  numbers: { id: "numbers", value: false, used: 0, maxed: false, element: null },
-  special: { id: "special", value: false, used: 0, maxed: false, element: null },
+  lowercase: { id: "lowercase", value: false, element: null },
+  uppercase: { id: "uppercase", value: false, element: null },
+  numbers: { id: "numbers", value: false, element: null },
+  special: { id: "special", value: false, element: null },
 };
 
 // Functions
