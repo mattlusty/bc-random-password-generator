@@ -31,11 +31,31 @@ function handleInput(e) {
   option.value = element.type == "text" ? element.value : element.checked;
 }
 
-// Function for getting a random element from an array
+// Get a random element from an array
 function getRandom(array) {
   let length = array.length;
   let randomIndex = randomNumber(0, length - 1);
   return array[randomIndex];
+}
+
+// Generate password with user options
+function generatePasswordSimple() {
+  let length = options.length.value;
+  if (!length) {
+    // pw length is option is EMPTY
+    return;
+  }
+  let pw = "";
+  for (let i = 0; i < length; i++) {
+    let optionsArray = Object.values(options);
+    let option = optionsArray[randomNumber(1, 4)];
+    let char = getRandom(window[option.id]);
+    if (!option.maxed) {
+      let char = getRandom(window[option.id]);
+      pw += char;
+    }
+  }
+  return pw;
 }
 
 // Utility Fuctions
@@ -57,8 +77,9 @@ function getPasswordOptions() {}
 // // Function for getting a random element from an array
 // function getRandom(arr) {}
 
-// Function to generate password with user input
-function generatePassword() {}
+// IMPLEMENTED
+// // Function to generate password with user input
+// function generatePassword() {}
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
