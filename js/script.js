@@ -1,3 +1,18 @@
+// My Code
+// =========================================================================
+
+// Array of options
+const options = {
+  length: { id: "length", value: 10, element: null },
+  lowercase: { id: "lowercase", value: false, maxed: false, element: null },
+  uppercase: { id: "uppercase", value: false, maxed: false, element: null },
+  numbers: { id: "numbers", value: false, maxed: false, element: null },
+  special: { id: "special", value: false, maxed: false, element: null },
+};
+
+// Original Starter Code
+// =========================================================================
+
 // Function to prompt user for password options
 function getPasswordOptions() {}
 
