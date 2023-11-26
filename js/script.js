@@ -1,9 +1,3 @@
-// GLOBAL VARIABLES
-// =========================================================================
-
-// Password Length (Option)
-let passwordLength = { id: "length", value: 10, element: null };
-
 // Checkbox Options
 const options = ["lowercase", "uppercase", "numbers", "special"];
 
@@ -25,11 +19,11 @@ function generatePassword() {
   if (!pwLength) return "Password Length not set!";
 
   let includeOptions = [];
-  let i = 0;
   options.forEach((option) => {
     let checked = document.querySelector("#" + option).checked;
-    if (checked) includeOptions[i++] = { id: option, count: 0 };
+    if (checked) includeOptions.push({ id: option, count: 0 });
   });
+
   if (includeOptions.length == 0) return "No Options Selected!";
 
   return createPasswordWithOptions(pwLength, includeOptions);
