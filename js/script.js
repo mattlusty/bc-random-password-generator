@@ -32,20 +32,24 @@ function generatePassword() {
   });
   if (includeOptions.length == 0) return "No Options Selected!";
 
-  let charsPerType = Math.ceil(pwLength / includeOptions.length);
-  let pw = "";
-  for (let i = 0; i < pwLength; i++) {
-    let randomIndex = getRandomIndex(includeOptions);
-    let includeOption = includeOptions[randomIndex];
-    let charTypeArray = window[includeOption.id];
-    pw += getItemAtRandom(charTypeArray);
-    if (++includeOption.count == charsPerType) removeItem(includeOptions, randomIndex);
-  }
-  return pw;
+  return createPasswordWithOptions(pwLength, includeOptions);
 }
 
 // Helper Functions
 // =========================================================================
+
+function createPasswordWithOptions(length, options) {
+  let charsPerType = Math.ceil(length / options.length);
+  let pw = "";
+  for (let i = 0; i < length; i++) {
+    let randomIndex = getRandomIndex(options);
+    let option = options[randomIndex];
+    let charTypeArray = window[option.id];
+    pw += getItemAtRandom(charTypeArray);
+    if (++option.count == charsPerType) removeItem(options, randomIndex);
+  }
+  return pw;
+}
 
 function displayPassword() {
   passwordDisplay.innerHTML = generatePassword();
