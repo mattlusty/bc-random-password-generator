@@ -4,7 +4,7 @@
 
 https://mattlusty.github.io/random-password-generator-bc
 
-![Website Screenshot](images/pw-generator.png)
+![Website Screenshot](images/screenshot.png)
 
 ## Description
 
