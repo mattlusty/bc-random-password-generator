@@ -16,7 +16,9 @@ let passwordDisplay = document.querySelector("#password");
 
 function generatePassword() {
   let pwLength = document.querySelector("#length").value;
+  console.log(pwLength);
   if (!pwLength) return "Password Length not set!";
+  if (pwLength < 8 || pwLength > 128) return "Password should be 8 to 128 characters";
 
   let includeOptions = [];
   options.forEach((option) => {
