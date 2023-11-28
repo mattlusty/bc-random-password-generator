@@ -29,83 +29,81 @@
     <div class="wrapper">
       <div class="card rounded-3">
         <div class="card-header p-4 rounded-3">
-          <form>
+          <form id="top-form">
             <div class="row gy-3">
-              <div class="col flex-nowrap input-group">
-                <div class="input-group-text">
+              <div class="col col-md-4">
+                <div id="pw-length-group" class="flex-nowrap input-group">
+                  <span class="input-group-text">Length</span>
                   <input
-                    class="form-check-input mt-0"
-                    type="checkbox"
-                    value=""
-                    aria-label="Checkbox for following text input"
+                    id="length"
+                    type="number"
+                    class="form-control"
+                    aria-label="Text input with checkbox"
+                    value="10"
                   />
                 </div>
-                <span class="input-group-text">Length</span>
-                <input
-                  id="pw-length"
-                  type="text"
-                  class="form-control"
-                  aria-label="Text input with checkbox"
-                />
+              </div>
+              <div class="col col-md-4">
+                <div class="flex-nowrap input-group">
+                  <div class="input-group-text">
+                    <input
+                      id="lowercase"
+                      class="form-check-input mt-0"
+                      type="checkbox"
+                      value="lowercase"
+                      aria-label="Checkbox for following text input"
+                    />
+                  </div>
+                  <span class="input-group-text">Lowercase</span>
+                </div>
+              </div>
+              <div class="col col-md-4">
+                <div class="flex-nowrap input-group">
+                  <div class="input-group-text">
+                    <input
+                      id="uppercase"
+                      class="form-check-input mt-0"
+                      type="checkbox"
+                      value="uppercase"
+                      aria-label="Checkbox for following text input"
+                    />
+                  </div>
+                  <span class="input-group-text">Uppercase</span>
+                </div>
+              </div>
+              <div class="col">
+                <div class="flex-nowrap input-group">
+                  <div class="input-group-text">
+                    <input
+                      id="numbers"
+                      class="form-check-input mt-0"
+                      type="checkbox"
+                      value="numbers"
+                      aria-label="Checkbox for following text input"
+                    />
+                  </div>
+                  <span class="input-group-text">Numbers</span>
+                </div>
               </div>
 
-              <div class="col flex-nowrap input-group">
-                <div class="input-group-text">
-                  <input
-                    class="form-check-input mt-0"
-                    type="checkbox"
-                    value=""
-                    aria-label="Checkbox for following text input"
-                  />
+              <div class="col">
+                <div class="flex-nowrap input-group">
+                  <div class="input-group-text">
+                    <input
+                      id="special"
+                      class="form-check-input mt-0"
+                      type="checkbox"
+                      value="special"
+                    />
+                  </div>
+                  <span class="input-group-text">Special Characters</span>
                 </div>
-                <span class="input-group-text">Lowercase</span>
-              </div>
-
-              <div class="col flex-nowrap input-group">
-                <div class="input-group-text">
-                  <input
-                    class="form-check-input mt-0"
-                    type="checkbox"
-                    value=""
-                    aria-label="Checkbox for following text input"
-                  />
-                </div>
-                <span class="input-group-text">Uppercase</span>
-              </div>
-
-              <div class="col flex-nowrap input-group">
-                <div class="input-group-text">
-                  <input
-                    class="form-check-input mt-0"
-                    type="checkbox"
-                    value=""
-                    aria-label="Checkbox for following text input"
-                  />
-                </div>
-                <span class="input-group-text">Numbers</span>
-              </div>
-
-              <div class="col flex-nowrap input-group">
-                <div class="input-group-text">
-                  <input
-                    class="form-check-input mt-0"
-                    type="checkbox"
-                    value=""
-                    aria-label="Checkbox for following text input"
-                  />
-                </div>
-                <span class="input-group-text">Special Characters</span>
               </div>
             </div>
           </form>
         </div>
         <div class="card-body">
-          <div
-            readonly
-            id="password"
-            placeholder="Your Secure Password"
-            aria-label="Generated Password"
-          >
+          <div id="password" placeholder="Your Secure Password" aria-label="Generated Password">
             Your Secure Password
           </div>
         </div>
@@ -115,6 +113,7 @@
         </div> -->
       </div>
     </div>
-    <script src="script.js"></script>
+    <script src="js/chars.js"></script>
+    <script src="js/script.js"></script>
   </body>
 </html>
