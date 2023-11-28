@@ -46,7 +46,7 @@ function createPasswordWithOptions(length, options) {
 }
 
 function displayPassword() {
-  passwordDisplay.innerHTML = generatePassword();
+  passwordDisplay.textContent = generatePassword();
 }
 
 function removeAtIndex(array, index) {
