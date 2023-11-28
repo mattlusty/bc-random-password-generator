@@ -55,8 +55,8 @@ button#generate:active {
   margin-bottom: -7px;
 }
 
-#pw-length {
-  min-width: 5ch;
+#length {
+  min-width: 4ch;
 }
 
 .input-group-text {
